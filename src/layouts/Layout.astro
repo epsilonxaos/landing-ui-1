@@ -15,36 +15,33 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<link rel="stylesheet" href="/assets/fonts/fonts.css" />
 	</head>
-	<body>
+	<body class="font-roboto">
 		<slot />
 	</body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
+	body,
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+		color: #17161c;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	.btn {
+		padding: 10px 25px;
+		border: none;
+		border-radius: 10px;
+		font-weight: 500;
+	}
+	.btn.negro {
+		background-color: #17161c;
+		color: white;
+	}
+	.btn.blanco {
+		background-color: white;
+		color: #17161c;
+		border: 1px solid rgb(211, 211, 211);
 	}
 </style>
